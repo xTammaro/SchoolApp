@@ -12,13 +12,13 @@
 *
 *	public class executiveFunctionAssess implements executiveFunctionInterface<> {
 *
-*	// The executive function assessment is instantiated using the Nashorn JS engine.
-*	// https://www.javatpoint.com/java-nashorn
+*	// The executive function assessment is instantiated using the GraalVM JS engine.
+*	// https://stackoverflow.com/questions/71481562/use-javascript-scripting-engine-in-java-17
 
 *	// This private call is a work in progress. This is used by the constructor to create a single instance of
 *	// the executive function test to the user.
 *
-*		private static ScriptEngine executiveFunctionScript = new ScriptEngineManager().getEngineByName(Nashorn)
+*		private static ScriptEngine executiveFunctionScript = new ScriptEngineManager().getEngineByName(GraalVM)
 *
 *	// This private call creates an array of size (to be determined based on the assessment's output). The user's
 *	// instance of the assessment will save their code to this dictionary.
