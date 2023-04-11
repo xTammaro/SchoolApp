@@ -1,0 +1,48 @@
+/**
+* This Java class will create a singleton instance of the open source executive function assessment by Adolphe et al. (2022).
+* The user should be able to access the singleton instance of the executive function assessment through the public interface.
+*
+* The proposed code will be as follows:
+*	// The javax.script.* import allows the javascript exec function test to be launched via java app.
+*	import javax.script.*;
+*	import java.io.*;
+*
+* 	*
+*	// Public class implementing the interface. This will be how the user accesses/manipulates the test (user view)
+*
+*	public class executiveFunctionAssess implements executiveFunctionInterface<> {
+*
+*	// The executive function assessment is instantiated using the Nashorn JS engine.
+*	// https://www.javatpoint.com/java-nashorn
+
+*	// This private call is a work in progress. This is used by the constructor to create a single instance of
+*	// the executive function test to the user.
+*
+*		private static ScriptEngine executiveFunctionScript = new ScriptEngineManager().getEngineByName(Nashorn)
+*
+*	// This private call creates an array of size (to be determined based on the assessment's output). The user's
+*	// instance of the assessment will save their code to this dictionary.
+*
+*		private static List<Integer> executiveFunctionResults = new ArrayList<>;
+*
+*		private static executiveFunctionAsses executiveFunctionInstance = null;
+*
+*		protected executiveFunctionAssess() {}
+*
+*		public static executiveFunctionAssess getInstance() {
+
+			if (executiveFunctionInstance == null) {
+				System.out.println("New instance created!");
+				executiveFunctionInstance = new executiveFunctionAssess
+			}
+			else {
+				System.out.println("Instance already exists!");
+			}
+			// Else return current assessment instance.
+			return executiveFunctionInstance;
+*			}
+*
+*	TODO: Add overrides for array. Add interface commands so that user can properly interact with executive function assessment.
+* 	This will require some experimentation.
+*   TODO: Right now, the top goal is to launch the app through a java console, and see how interactive it is without modification. - Nick
+**/

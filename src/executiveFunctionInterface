@@ -1,0 +1,8 @@
+public interface executiveFunctionInterface<T> {
+	// This placeholder interface should allow the user's interface to
+	// add scores to the appropriate index in the array after completing each test section.
+	// If there are limitations to the way the user natively interacts with the test,
+	// this interface should add touch-screen capability for the user to properly
+	// interact with the test.
+	return null;
+}
