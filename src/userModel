@@ -6,11 +6,11 @@ public abstract class UserModel {
     protected String password;
     protected Role role;               # The role class will define permissions for the user
     protected List<Subjects> subjects;
-    protected List<Map<Subject, Integer>> subjectScores; # Will need to work with executive function class
+    protected Map<Subject, Integer> subjectScores; # Will need to work with executive function class
     protected List<UserModel> accessibleUsers;
     protected List<ClassRoom> classes; # Need a way to allocate students/lecturers to classes so they can link to one another
 
-
+//
 
 
     // Constructor, getters, and setters for common fields
@@ -19,6 +19,8 @@ public abstract class UserModel {
      * Returns the list of users that the current user has access to.
      */
     public abstract List<UserModel> getAccessibleUsers();
+
+
 }
 
 public class Parent extends UserModel {
@@ -26,8 +28,8 @@ public class Parent extends UserModel {
 
     public void setChild(UserModel child) {
         this.accessibleUsers.add(child)
-        .// This function is called by our "UserController" class anytime a parent wants to add a child.
-
+      // These type of functions are called by our "UserController" class when the user wants to interact with their model.
+      // Might make more sense to add a parent from a child user rather than add child from parent?
     }
     @Override
     public List<UserModel> getAccessibleUsers() {
@@ -38,32 +40,39 @@ public class Parent extends UserModel {
 public class Lecturer extends UserModel {
     // Lecturer-specific fields, methods, and implementation of getAccessibleUsers()
 
-    public void setStudents(List<UserModel> students) {
-        // Need class "classroom" with subject, classroom code, lecturer, list of students etc.
-        // Will allow something like accessibleUsers.addall(this.getClass(class-code).getStudents()
 
     }
 
 
     @Override
 
-    public List<UserModel> getAccessibleUsers() {
+    public List<UserModel> setAccessibleUsers() {
         // Implement logic to return the list of students for the lecturer
+
+        // Need java class "classroom" with subject, classroom code, lecturer, list of students etc.
+        // Loop through classrooms, add users in lecturers class.
+
     }
 }
 
 public class Student extends UserModel {
-    // Student-specific fields, methods, and implementation of getAccessibleUsers()
-    @Override
+    // Student-specific fields, methods
+
+
+    public(maybe private) Set<UserModel> friends
+
+
+    public void addFriend(UserModel friend)
+    public void removeFriend(UserModel friend)
+
+
 
 
     public void joinClass(Integer classCode, String password) {
+
+    ///
         for class in ClassRooms.getClasses() {
-            if (classCode == classes.getClassCode() && password == classes.getPassword()) {
-                this.classes.add(class);
-                break;
-            }
-        }
+            // Loop through classrooms
 
     }
 
@@ -71,6 +80,26 @@ public class Student extends UserModel {
 
     public List<UserModel> getAccessibleUsers() {
         // Implement logic to return an empty list or throw an exception as students do not have access to other users
+    }
+}
+
+// To adhere to assignment criteria we could implement this using factory method:
+
+public class UserFactory {
+
+    public static UserModel createUser(Role role, String username, String password) {
+
+    // Lecturers will need some sort of access code (lecturer user requires special permission)
+        switch (role.getName()) {
+            case "parent":
+                return new Parent(username, password, role);
+            case "lecturer":
+                return new Lecturer(username, password, role);
+            case "student":
+                return new Student(username, password, role);
+            default:
+                throw new IllegalArgumentException("Invalid role provided");
+        }
     }
 }
 
