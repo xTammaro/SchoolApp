@@ -1,0 +1,78 @@
+/**
+
+public abstract class UserModel {
+    // Fields:
+    protected String username;
+    protected String password;
+    protected Role role;               # The role class will define permissions for the user
+    protected List<Subjects> subjects;
+    protected List<Map<Subject, Integer>> subjectScores; # Will need to work with executive function class
+    protected List<UserModel> accessibleUsers;
+    protected List<ClassRoom> classes; # Need a way to allocate students/lecturers to classes so they can link to one another
+
+
+
+
+    // Constructor, getters, and setters for common fields
+
+    /**
+     * Returns the list of users that the current user has access to.
+     */
+    public abstract List<UserModel> getAccessibleUsers();
+}
+
+public class Parent extends UserModel {
+    // Parent-specific fields, methods, and implementation of getAccessibleUsers()
+
+    public void setChild(UserModel child) {
+        this.accessibleUsers.add(child)
+        .// This function is called by our "UserController" class anytime a parent wants to add a child.
+
+    }
+    @Override
+    public List<UserModel> getAccessibleUsers() {
+        // Implement logic to return the list of children for the parent
+    }
+}
+
+public class Lecturer extends UserModel {
+    // Lecturer-specific fields, methods, and implementation of getAccessibleUsers()
+
+    public void setStudents(List<UserModel> students) {
+        // Need class "classroom" with subject, classroom code, lecturer, list of students etc.
+        // Will allow something like accessibleUsers.addall(this.getClass(class-code).getStudents()
+
+    }
+
+
+    @Override
+
+    public List<UserModel> getAccessibleUsers() {
+        // Implement logic to return the list of students for the lecturer
+    }
+}
+
+public class Student extends UserModel {
+    // Student-specific fields, methods, and implementation of getAccessibleUsers()
+    @Override
+
+
+    public void joinClass(Integer classCode, String password) {
+        for class in ClassRooms.getClasses() {
+            if (classCode == classes.getClassCode() && password == classes.getPassword()) {
+                this.classes.add(class);
+                break;
+            }
+        }
+
+    }
+
+
+
+    public List<UserModel> getAccessibleUsers() {
+        // Implement logic to return an empty list or throw an exception as students do not have access to other users
+    }
+}
+
+
+**/
