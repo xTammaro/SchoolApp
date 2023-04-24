@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">readyforhighschool</string>
+    <string name="login">Login</string>
+    <string name="let_s_get_ready_for_highschool">Let\'s get ready for highschool</string>
+    <string name="type_your_password_here">Type your password here</string>
+    <string name="type_your_e_mail_address_here">Type your e-mail address here</string>
+    <string name="readyforhighschool" />
+</resources>
