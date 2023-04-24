@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "796575207013",
+    "project_id": "ga-23s1-comp2100-6442",
+    "storage_bucket": "ga-23s1-comp2100-6442.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:796575207013:android:55904bca63896c448bc08c",
+        "android_client_info": {
+          "package_name": "com.example.readyforhighschool"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "796575207013-ug01ol6vr5f860mguomuk6do2if4e34h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.readyforhighschool",
+            "certificate_hash": "fb87433e7f635bda19c39ba313988fcd650aa141"
+          }
+        },
+        {
+          "client_id": "796575207013-g4l2ei1udq790kk3fjcoo4b1ogpugean.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwL20-pBsb5VrGX1mpIOvmJN5wIznDALk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "796575207013-c7gc7al87ft48t7mh3fadafpdegl9l45.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
